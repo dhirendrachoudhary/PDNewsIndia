@@ -1,0 +1,16 @@
+[07-Apr-2017 09:19:22 Etc/GMT] PHP Fatal error:  Call to undefined function get_header() in /home/pdnewddz/public_html/wp-content/themes/goodnews5/404.php on line 1
+[08-Apr-2017 05:25:33 Etc/GMT] PHP Fatal error:  Call to undefined function get_header() in /home/pdnewddz/public_html/wp-content/themes/goodnews5/404.php on line 1
+[10-Sep-2017 16:07:10 Etc/GMT] PHP Fatal error:  Call to undefined function get_header() in /home/pdnewddz/public_html/wp-content/themes/goodnews5/404.php on line 1
+[12-Sep-2017 08:04:05 Etc/GMT] PHP Fatal error:  Call to undefined function get_header() in /home/pdnewddz/public_html/wp-content/themes/goodnews5/index.php on line 1
+[04-Jan-2018 03:56:27 Etc/GMT] PHP Fatal error:  Call to undefined function get_header() in /home/pdnewddz/public_html/wp-content/themes/goodnews5/404.php on line 1
+[04-Jan-2018 03:56:28 Etc/GMT] PHP Fatal error:  Call to undefined function get_header() in /home/pdnewddz/public_html/wp-content/themes/goodnews5/404.php on line 1
+[06-Jan-2018 15:35:59 Etc/GMT] PHP Fatal error:  Call to undefined function get_header() in /home/pdnewddz/public_html/wp-content/themes/goodnews5/404.php on line 1
+[06-Jan-2018 15:36:00 Etc/GMT] PHP Fatal error:  Call to undefined function get_header() in /home/pdnewddz/public_html/wp-content/themes/goodnews5/404.php on line 1
+[08-Jan-2018 05:56:44 Etc/GMT] PHP Fatal error:  Call to undefined function get_header() in /home/pdnewddz/public_html/wp-content/themes/goodnews5/404.php on line 1
+[08-Jan-2018 05:56:44 Etc/GMT] PHP Fatal error:  Call to undefined function get_header() in /home/pdnewddz/public_html/wp-content/themes/goodnews5/404.php on line 1
+[14-Aug-2018 12:32:50 Etc/GMT] PHP Fatal error:  Call to undefined function get_header() in /home3/pdnewddz/public_html/wp-content/themes/goodnews5/index.php on line 1
+[14-Aug-2018 12:32:50 Etc/GMT] PHP Fatal error:  Call to undefined function get_header() in /home3/pdnewddz/public_html/wp-content/themes/goodnews5/404.php on line 1
+[14-Aug-2018 12:32:50 Etc/GMT] PHP Fatal error:  Call to undefined function language_attributes() in /home3/pdnewddz/public_html/wp-content/themes/goodnews5/header.php on line 2
+[14-Aug-2018 12:32:51 Etc/GMT] PHP Fatal error:  Call to undefined function get_header() in /home3/pdnewddz/public_html/wp-content/themes/goodnews5/archive.php on line 1
+[14-Aug-2018 12:32:51 Etc/GMT] PHP Fatal error:  Call to undefined function get_header() in /home3/pdnewddz/public_html/wp-content/themes/goodnews5/index.php on line 1
+[14-Aug-2018 12:32:51 Etc/GMT] PHP Fatal error:  Call to undefined function get_header() in /home3/pdnewddz/public_html/wp-content/themes/goodnews5/404.php on line 1

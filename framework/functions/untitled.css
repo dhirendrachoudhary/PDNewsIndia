@@ -1,0 +1,18 @@
+.mom-related-posts li:nth-child(4n+1) { 
+	clear: left; 
+}
+
+.col2 .mom-related-posts li:nth-child(4n+1) { 
+	clear: none; 
+}
+.mom-related-posts li:nth-child(3n+1) { 
+	clear: left; 
+}
+@media only screen and (min-width: 0px) and (max-width: 1165px) { 
+	.mom-related-posts li:nth-child(4n+1) { 
+		clear: none; 
+	}
+	.mom-related-posts li:nth-child(3n+1) { 
+		clear: left;
+	 }
+}

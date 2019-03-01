@@ -1,0 +1,148 @@
+<?php
+function mom_posts_share($id, $url, $style='', $min=false) {
+    $url = urlencode($url);
+    $desc = esc_js(wp_html_excerpt(strip_shortcodes(get_the_content()), 160));
+    $img = urlencode(mom_post_image('large'));
+    $title = get_the_title();
+    $window_title = __('Share This', 'theme');
+    $window_width = 600;
+    $window_height = 455;
+
+?>
+<script type="text/javascript">
+jQuery(document).ready(function ($) {
+    $('.facebook-<?php echo $id; ?> .count').sharrre({
+        share: {
+        facebook: true
+        },
+        template: '<span>{total}</span>',
+        enableHover: false,
+        enableTracking: true,
+    });
+    $('.twitter-<?php echo $id; ?> .count').sharrre({
+        share: {
+        twitter: true
+        },
+        template: '<span>{total}</span>',
+        enableHover: false,
+        enableTracking: true,
+    });
+    $('.googleplus-<?php echo $id; ?> .count').sharrre({
+            share: {
+            googlePlus: true
+            },
+        urlCurl: '<?php echo get_template_directory_uri() ?>/framework/sharrre.php',
+            template: '<span>{total}</span>',
+            enableHover: false,
+            enableTracking: true,
+    });   
+    $('.linkedin-<?php echo $id; ?> .count').sharrre({
+        share: {
+        linkedin: true
+        },
+        template: '<span>{total}</span>',
+        enableHover: false,
+        enableTracking: true,
+    });        
+    $('.pinterest-<?php echo $id; ?> .count').sharrre({
+        share: {
+        pinterest: true
+        },
+        template: '<span>{total}</span>',
+        enableHover: false,
+        enableTracking: true,
+    });  
+});
+</script>
+<?php if ($style == 'vertical') { ?>
+           <div class="mom-social-share ss-vertical border-box">
+        <?php if (mom_option('post_share_facebook') != false) { ?>
+            <div class="ss-icon facebook facebook-<?php echo $id; ?>">
+                <a href="#" onclick="window.open('http://www.facebook.com/sharer/sharer.php?m2w&s=100&p&#91;url&#93;=<?php echo $url; ?>&p&#91;images&#93;&#91;0&#93;=<?php echo $img; ?>&p&#91;title&#93;=<?php $title; ?>&p&#91;summary&#93;=<?php echo $desc; ?>', '<?php echo $window_title; ?>', 'menubar=no,toolbar=no,resizable=no,scrollbars=no, width=<?php echo $window_width; ?>,height=<?php echo $window_height; ?>');"><span class="icon"><i class="fa-icon-facebook"></i><?php _e('Share', 'theme'); ?></span></a>
+                <span class="count" data-url="<?php echo $url; ?>">0</span>
+            </div> <!--icon-->
+        <?php } ?>
+
+        <?php if (mom_option('post_share_twitter') != false) { ?>
+            <div class="ss-icon twitter twitter-<?php echo $id; ?>">
+                <a href="#" onclick="window.open('http://twitter.com/share?text=<?php echo $title; ?>&url=<?php echo $url; ?>', '<?php _e('Post this On twitter', 'theme'); ?>', 'menubar=no,toolbar=no,resizable=no,scrollbars=no,width=<?php echo $window_width; ?>,height=<?php echo $window_height; ?>');"><span class="icon"><i class="fa-icon-twitter"></i><?php _e('Tweet', 'theme'); ?></span></a>
+                <span class="count" data-url="<?php echo $url; ?>">0</span>
+            </div> <!--icon-->
+        <?php } ?>
+
+        <?php if (mom_option('post_share_google') != false) { ?>
+            <div class="ss-icon googleplus googleplus-<?php echo $id; ?>">
+                <a href="https://plus.google.com/share?url=<?php echo $url;?>"
+onclick="window.open(this.href, '', 'menubar=no,toolbar=no,resizable=no,scrollbars=no,height=<?php echo $window_height; ?>,width=<?php echo $window_width; ?>');return false"><span class="icon"><i class="fa-icon-google-plus"></i><?php _e('Share', 'theme'); ?></span></a>
+                <span class="count" data-url="<?php echo $url; ?>">0</span>
+            </div> <!--icon-->
+        <?php } ?>
+    <?php if ($min == false) { ?>
+        <?php if (mom_option('post_share_linkedin') != false) { ?>
+                <div class="ss-icon linkedin linkedin-<?php echo $id; ?>">
+                <a href="http://www.linkedin.com/shareArticle?mini=true&url=<?php echo $url;?>&title=<?php echo strip_tags($title); ?>&source=<?php echo urlencode(home_url());?>"
+onclick="javascript:window.open(this.href, '', 'menubar=no,toolbar=no,resizable=no,scrollbars=no,height=<?php echo $window_height; ?>,width=<?php echo $window_width; ?>');return false;"><span class="icon"><i class="fa-icon-linkedin"></i><?php _e('Share', 'theme'); ?></span></a>
+                <span class="count" data-url="<?php echo $url; ?>">0</span>
+            </div> <!--icon-->
+        <?php } ?>
+        <?php if (mom_option('post_share_pin') != false) { ?>
+            <div class="ss-icon pinterest pinterest-<?php echo $id; ?>">
+                <a href="http://pinterest.com/pin/create/bookmarklet/?media=<?php echo $img;?>&amp;
+url=<?php echo $url;?>&amp;
+is_video=false&amp;description=<?php echo $title;?>"
+onclick="javascript:window.open(this.href, '_blank', 'menubar=no,toolbar=no,resizable=no,scrollbars=no,height=<?php echo $window_height; ?>,width=<?php echo $window_width; ?>');return false;"><span class="icon"><i class="fa-icon-pinterest"></i><?php _e('Share', 'theme'); ?></span></a>
+                <span class="count" data-url="<?php echo $url; ?>">0</span>
+            </div> <!--icon-->
+        <?php } ?>
+    <?php } ?>
+        </div> <!--social share-->
+    <div class="clear"></div>
+
+<?php } else { // horizontal here ?>
+       <div class="mom-social-share ss-horizontal border-box">
+        <?php if (mom_option('post_share_facebook') != false) { ?>
+            <div class="ss-icon facebook facebook-<?php echo $id; ?>">
+                <a href="#" onclick="window.open('http://www.facebook.com/sharer/sharer.php?m2w&s=100&p&#91;url&#93;=<?php echo $url; ?>&p&#91;images&#93;&#91;0&#93;=<?php echo $img; ?>&p&#91;title&#93;=<?php $title; ?>&p&#91;summary&#93;=<?php echo $desc; ?>', '<?php echo $window_title; ?>', 'menubar=no,toolbar=no,resizable=no,scrollbars=no, width=<?php echo $window_width; ?>,height=<?php echo $window_height; ?>');"><span class="icon"><i class="fa-icon-facebook"></i><?php _e('Share', 'theme'); ?></span></a>
+                <span class="count" data-url="<?php echo $url; ?>">0</span>
+            </div> <!--icon-->
+        <?php } ?>
+
+        <?php if (mom_option('post_share_twitter') != false) { ?>
+            <div class="ss-icon twitter twitter-<?php echo $id; ?>">
+                <a href="#" onclick="window.open('http://twitter.com/share?text=<?php echo $title; ?>&url=<?php echo $url; ?>', '<?php _e('Post this On twitter', 'theme'); ?>', 'menubar=no,toolbar=no,resizable=no,scrollbars=no,width=<?php echo $window_width; ?>,height=<?php echo $window_height; ?>');"><span class="icon"><i class="fa-icon-twitter"></i><?php _e('Tweet', 'theme'); ?></span></a>
+                <span class="count" data-url="<?php echo $url; ?>">0</span>
+            </div> <!--icon-->
+        <?php } ?>
+
+        <?php if (mom_option('post_share_google') != false) { ?>
+            <div class="ss-icon googleplus googleplus-<?php echo $id; ?>">
+                <a href="https://plus.google.com/share?url=<?php echo $url;?>"
+onclick="window.open(this.href, '', 'menubar=no,toolbar=no,resizable=no,scrollbars=no,height=<?php echo $window_height; ?>,width=<?php echo $window_width; ?>');return false"><span class="icon"><i class="fa-icon-google-plus"></i><?php _e('Share', 'theme'); ?></span></a>
+                <span class="count" data-url="<?php echo $url; ?>">0</span>
+            </div> <!--icon-->
+        <?php } ?>
+    <?php if ($min == false) { ?>
+        <?php if (mom_option('post_share_linkedin') != false) { ?>
+                <div class="ss-icon linkedin linkedin-<?php echo $id; ?>">
+                <a href="http://www.linkedin.com/shareArticle?mini=true&url=<?php echo $url;?>&title=<?php echo strip_tags($title); ?>&source=<?php echo urlencode(home_url());?>"
+onclick="javascript:window.open(this.href, '', 'menubar=no,toolbar=no,resizable=no,scrollbars=no,height=<?php echo $window_height; ?>,width=<?php echo $window_width; ?>');return false;"><span class="icon"><i class="fa-icon-linkedin"></i><?php _e('Share', 'theme'); ?></span></a>
+                <span class="count" data-url="<?php echo $url; ?>">0</span>
+            </div> <!--icon-->
+        <?php } ?>
+        <?php if (mom_option('post_share_pin') != false) { ?>
+            <div class="ss-icon pinterest pinterest-<?php echo $id; ?>">
+                <a href="http://pinterest.com/pin/create/bookmarklet/?media=<?php echo $img;?>&amp;
+url=<?php echo $url;?>&amp;
+is_video=false&amp;description=<?php echo $title;?>"
+onclick="javascript:window.open(this.href, '_blank', 'menubar=no,toolbar=no,resizable=no,scrollbars=no,height=<?php echo $window_height; ?>,width=<?php echo $window_width; ?>');return false;"><span class="icon"><i class="fa-icon-pinterest"></i><?php _e('Share', 'theme'); ?></span></a>
+                <span class="count" data-url="<?php echo $url; ?>">0</span>
+            </div> <!--icon-->
+        <?php } ?>
+    <?php } ?>
+        <div class="clear"></div>
+        </div> <!--social share-->
+
+<?php
+
+}
+}
